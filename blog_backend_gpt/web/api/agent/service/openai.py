@@ -182,8 +182,16 @@ class OpenAIAgentService(AgentService):
             self.model, prompt, args, settings=self.settings, callbacks=self.callbacks
         )
 
+        completion_content = ""
+        if completion and hasattr(completion, 'content'):
+            completion_content = completion.content.strip() # use strip() to format
+
         previous_tasks = (completed_tasks or []) + tasks
-        return [completion] if completion not in previous_tasks else []
+
+        if completion_content and completion_content not in previous_tasks:
+            return [completion_content] # return a new task
+        else:
+            return []
 
     async def summarize_task_agent(
         self,

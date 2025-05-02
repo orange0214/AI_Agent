@@ -67,7 +67,6 @@ async def create_tasks(
     )
     return NewTasksResponse(newTasks=new_tasks, run_id=req_body.run_id)
 
-
 @router.post("/summarize")
 async def summarize(
     req_body: AgentSummarize = Depends(agent_summarize_validator),

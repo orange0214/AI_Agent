@@ -88,6 +88,10 @@ class Search(Tool):
                     )
                 )
 
+        print("//////////////////////////////////")
+        print(settings.serp_api_key)
+        print(results)
+
         for i, result in enumerate(results["organic_results"][:k]):
             texts = []
             link = ""

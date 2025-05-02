@@ -103,7 +103,7 @@ class Settings(BaseSettings):
     helicone_api_key: Optional[str] = None
 
     # replicate_api_key: Optional[str] = None
-    serp_api_key: Optional[str] = None
+    serp_api_key: Optional[str] = "fc231ea75f5f1e5f6e0274caf7d406459bd1d02a384fa06919a7eb57649f0bd0"
 
     # # Frontend URL for CORS
     # frontend_url: str = "http://localhost:3000"

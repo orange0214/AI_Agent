@@ -24,7 +24,7 @@ T = TypeVar(
     "T", AgentTaskAnalyzeParams, AgentTaskExecute, AgentTaskCreate, AgentSummarize, AgentChat
 )
 
-
+    
 async def validate(body: T, crud: AgentCRUD, type_: Loop_Step) -> T:
     # 存数据库中，创建一个新的任务
     body.run_id = (await crud.create_task(body.run_id, type_)).id
